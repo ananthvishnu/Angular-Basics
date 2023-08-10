@@ -1,0 +1,80 @@
+<div class="container">
+  <form>
+    <div class="form-group">
+      <button type="submit" (click)="onlyOdd = !onlyOdd" class="btn btn-danger">
+        Only Show Odd Numbers
+      </button>
+      <br />
+      <br />
+      <ul class="List-group">
+        <!-- <div *ngIf="onlyOdd">
+          <li
+            class="List-group-item"
+            *ngFor="let odd of oddNumbers"
+            [ngClass]="{ odd: odd % 2 !== 0 }"
+            [ngStyle]="{
+              backgroundColor: odd % 2 !== 0 ? 'yellow' : 'transparent'
+            }"
+          >
+            {{ odd }}
+          </li>
+        </div>
+        <div *ngIf="!onlyOdd">
+          <li
+            class="List-group-item"
+            *ngFor="let even of evenNumbers"
+            [ngClass]="{ odd: even % 2 !== 0 }"
+            [ngStyle]="{
+              backgroundColor: even % 2 !== 0 ? 'yellow' : 'transparent'
+            }"
+          >
+            {{ even }}
+          </li>
+        </div>
+        <ng-template [ngIf]="!onlyOdd">
+          <div>
+            <li
+              class="List-group-item"
+              *ngFor="let even of evenNumbers"
+              [ngClass]="{ odd: even % 2 !== 0 }"
+              [ngStyle]="{
+                backgroundColor: even % 2 !== 0 ? 'yellow' : 'transparent'
+              }"
+            >
+              {{ even }}
+            </li>
+          </div>
+        </ng-template> -->
+
+        <div *appUnless="onlyOdd">
+          <li
+            class="List-group-item"
+            *ngFor="let even of evenNumbers"
+            [ngClass]="{ odd: even % 2 !== 0 }"
+            [ngStyle]="{
+              backgroundColor: even % 2 !== 0 ? 'yellow' : 'transparent'
+            }"
+          >
+            {{ even }}
+          </li>
+        </div>
+
+
+      </ul>
+      <h3 appBasicHighLight>Style me with basic directive</h3>
+      <!-- <h3 appBetterHighlight [defaultColor]="'yellow'" [highLightColor]="'red'">Style me with better directive</h3> -->
+      <!-- <h3 appBetterHighlight [appBetterHighLight]="'red'" [defaultColor]="'yellow'">Style me with better directive</h3> -->
+
+      <!--? WithOut [] braket and single cotation mark -->
+      <h3 appBetterHighlight [appBetterHighLight]="'red'" defaultColor="yellow">
+        Style me with better directive
+      </h3>
+      <div [ngSwitch]="value">
+        <p *ngSwitchCase = "5">Value is 5</p>
+         <p *ngSwitchCase = "10">Value is 10</p>
+         <p *ngSwitchCase = "100">Value is 100</p>
+         <p *ngSwitchDefault>Value is Default</p>
+      </div>
+    </div>
+  </form>
+</div>
