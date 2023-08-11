@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-4">
+    <div class="list-group">
+      <a
+        href="#"
+        class="list-group-item"
+        *ngFor="let server of servers">
+        {{ server.name }}
+      </a>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-4">
+    <br>
+    <button class="btn btn-danger" (click)="onReload()">Reload Page</button>
+    <br><br>
+    <app-edit-server></app-edit-server>
+    <hr>
+    <app-server></app-server>
+  </div>
+</div>
+
